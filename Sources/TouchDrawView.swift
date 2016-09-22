@@ -430,18 +430,7 @@ public class TouchDrawView: UIView {
         if let touch = touches.first {
             self.lastPoint = touch.locationInView(self)
             self.pointsArray = []
-            self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
-            /*
-             switch selectedTool
-             {
-             case .Brush:
-             self.lastPoint = touch.locationInView(self)
-             self.pointsArray = []
-             self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
-             case .Square:
-             
-             }*/
-            
+            self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))            
         }
     }
     
