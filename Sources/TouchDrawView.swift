@@ -53,6 +53,16 @@ public class TouchDrawView: UIView {
     private var redoEnabled = false
     private var clearEnabled = false
     
+    public var selectedTool:Tools = .Brush
+    
+    public enum Tools:Int
+    {
+        case Brush
+        case Square
+    }
+    
+    
+    
     /// initializes a TouchDrawView instance
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -217,6 +227,54 @@ public class TouchDrawView: UIView {
         UIGraphicsEndImageContext()
     }
     
+    /// draws a stroke
+    private func drawSquare(stroke: Stroke) -> Void {
+        let properties = stroke.settings
+        let array = stroke.points
+        
+        if array.count == 1 {
+            // Draw the one point
+            let pointStr = array[0]
+            let point = CGPointFromString(pointStr)
+            self.drawSquareFrom(point, toPoint: point, properties: properties)
+        }else
+        {
+            let fPoint = array[0]
+            let lPoint = array[array.count-1]
+            let firstPoint = CGPointFromString(fPoint)
+            let lastPoint = CGPointFromString(lPoint)
+
+            self.drawSquareFrom(firstPoint, toPoint: lastPoint, properties: properties)
+
+        }
+
+        self.mergeViews()
+    }
+    
+    /// draws a square from touch began to touch ended
+    private func drawSquareFrom(fromPoint: CGPoint, toPoint: CGPoint, properties: StrokeSettings) -> Void {
+        
+        UIGraphicsBeginImageContext(self.frame.size)
+        let context = UIGraphicsGetCurrentContext()
+        let rect = CGRect(origin: fromPoint, size: CGSize(width: toPoint.x, height: toPoint.y))
+
+            
+        CGContextStrokeRectWithWidth(context!,rect,properties.width)
+        
+            
+            
+        CGContextSetRGBStrokeColor(context!, properties.color.red, properties.color.green, properties.color.blue, 1.0)
+        CGContextSetBlendMode(context!, CGBlendMode.Normal)
+        
+        CGContextStrokePath(context!)
+        
+        self.tempImageView.image?.drawInRect(self.tempImageView.frame)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        self.tempImageView.image = image
+        self.tempImageView.alpha = properties.color.alpha
+        UIGraphicsEndImageContext()
+    }
+    
     /// exports the current drawing
     public func exportDrawing() -> UIImage {
         UIGraphicsBeginImageContext(self.mainImageView.bounds.size)
@@ -339,7 +397,7 @@ public class TouchDrawView: UIView {
         
         if let touch = touches.first {
             let currentPoint = touch.locationInView(self)
-            self.drawLineFrom(self.lastPoint, toPoint: currentPoint, properties: self.brushProperties)
+            self.drawSquareFrom(self.lastPoint, toPoint: currentPoint, properties: self.brushProperties)
             
             self.lastPoint = currentPoint
             self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
@@ -350,7 +408,7 @@ public class TouchDrawView: UIView {
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if !self.touchesMoved {
             // draw a single point
-            self.drawLineFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
+            self.drawSquareFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
         }
         
         self.mergeViews()
