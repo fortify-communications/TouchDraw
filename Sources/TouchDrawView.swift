@@ -59,6 +59,7 @@ public class TouchDrawView: UIView {
     {
         case Brush
         case Square
+        case Arrow
     }
     
     
@@ -227,7 +228,7 @@ public class TouchDrawView: UIView {
         UIGraphicsEndImageContext()
     }
     
-    /// draws a stroke
+    /// draws a square
     private func drawSquare(stroke: Stroke) -> Void {
         let properties = stroke.settings
         let array = stroke.points
@@ -253,25 +254,67 @@ public class TouchDrawView: UIView {
     
     /// draws a square from touch began to touch ended
     private func drawSquareFrom(fromPoint: CGPoint, toPoint: CGPoint, properties: StrokeSettings) -> Void {
+        self.tempImageView.image = nil
         
         UIGraphicsBeginImageContext(self.frame.size)
         let context = UIGraphicsGetCurrentContext()
-        let rect = CGRect(origin: fromPoint, size: CGSize(width: toPoint.x, height: toPoint.y))
-
-            
-        CGContextStrokeRectWithWidth(context!,rect,properties.width)
         
-            
-            
+        let origin = CGPoint(x: min(fromPoint.x, toPoint.x), y: min(fromPoint.y, toPoint.y))
+        let size = CGSize(width: abs(fromPoint.x-toPoint.x), height:  abs(fromPoint.y-toPoint.y))
+        
+        let rect = CGRect(origin: origin, size: size)
+        
+        CGContextStrokeRectWithWidth(context!,rect,properties.width)
         CGContextSetRGBStrokeColor(context!, properties.color.red, properties.color.green, properties.color.blue, 1.0)
         CGContextSetBlendMode(context!, CGBlendMode.Normal)
-        
         CGContextStrokePath(context!)
         
         self.tempImageView.image?.drawInRect(self.tempImageView.frame)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         self.tempImageView.image = image
         self.tempImageView.alpha = properties.color.alpha
+        
+        UIGraphicsEndImageContext()
+    }
+    
+    /// draws an arrow
+    private func drawArrow(stroke: Stroke) -> Void {
+        let properties = stroke.settings
+        let array = stroke.points
+        
+        if array.count == 1 {
+            // Draw the one point
+            let pointStr = array[0]
+            let point = CGPointFromString(pointStr)
+            self.drawArrowFrom(point, toPoint: point, properties: properties)
+        }else
+        {
+            let fPoint = array[0]
+            let lPoint = array[array.count-1]
+            let firstPoint = CGPointFromString(fPoint)
+            let lastPoint = CGPointFromString(lPoint)
+            self.drawArrowFrom(firstPoint, toPoint: lastPoint, properties: properties)
+        }
+        
+        self.mergeViews()
+    }
+    
+    /// draws a square from touch began to touch ended
+    private func drawArrowFrom(fromPoint: CGPoint, toPoint: CGPoint, properties: StrokeSettings) -> Void {
+        self.tempImageView.image = nil
+        
+        UIGraphicsBeginImageContext(self.frame.size)
+        let _ = UIGraphicsGetCurrentContext()
+        let arrowPath = UIBezierPath.bezierPathWithArrowFromPoint(startPoint: fromPoint, endPoint: toPoint, tailWidth: properties.width, headWidth: properties.width+15, headLength: 20)
+        
+        arrowPath.fill()
+        arrowPath.stroke()
+        
+        self.tempImageView.image?.drawInRect(self.tempImageView.frame)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        self.tempImageView.image = image
+        self.tempImageView.alpha = properties.color.alpha
+        
         UIGraphicsEndImageContext()
     }
     
@@ -388,6 +431,17 @@ public class TouchDrawView: UIView {
             self.lastPoint = touch.locationInView(self)
             self.pointsArray = []
             self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
+            /*
+             switch selectedTool
+             {
+             case .Brush:
+             self.lastPoint = touch.locationInView(self)
+             self.pointsArray = []
+             self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
+             case .Square:
+             
+             }*/
+            
         }
     }
     
@@ -396,19 +450,41 @@ public class TouchDrawView: UIView {
         self.touchesMoved = true
         
         if let touch = touches.first {
-            let currentPoint = touch.locationInView(self)
-            self.drawSquareFrom(self.lastPoint, toPoint: currentPoint, properties: self.brushProperties)
-            
-            self.lastPoint = currentPoint
-            self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
+            switch selectedTool
+            {
+            case .Brush:
+                let currentPoint = touch.locationInView(self)
+                self.drawLineFrom(self.lastPoint, toPoint: currentPoint, properties: self.brushProperties)
+                
+                self.lastPoint = currentPoint
+                self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
+            case .Square:
+                let currentPoint = touch.locationInView(self)
+                self.drawSquareFrom(self.lastPoint, toPoint: currentPoint, properties: self.brushProperties)
+                self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
+                
+            case .Arrow:
+                let currentPoint = touch.locationInView(self)
+                self.drawArrowFrom(self.lastPoint, toPoint: currentPoint, properties: self.brushProperties)
+                self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
+                
+            }
         }
     }
     
     /// triggered whenever touches end, resulting in a newly created Stroke
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if !self.touchesMoved {
-            // draw a single point
-            self.drawSquareFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
+            // draw from a single point
+            switch selectedTool
+            {
+            case .Brush:
+                self.drawLineFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
+            case .Square:
+                self.drawSquareFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
+            case .Arrow:
+                self.drawArrowFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
+            }
         }
         
         self.mergeViews()
@@ -433,5 +509,50 @@ public class TouchDrawView: UIView {
             self.delegate?.clearEnabled?()
             self.clearEnabled = true
         }
+    }
+}
+
+//https://gist.github.com/mwermuth/07825df27ea28f5fc89a
+extension UIBezierPath {
+    
+    class func getAxisAlignedArrowPoints(inout points: Array<CGPoint>, forLength: CGFloat, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat ) {
+        
+        let tailLength = forLength - headLength
+        points.append(CGPointMake(0, tailWidth/2))
+        points.append(CGPointMake(tailLength, tailWidth/2))
+        points.append(CGPointMake(tailLength, headWidth/2))
+        points.append(CGPointMake(forLength, 0))
+        points.append(CGPointMake(tailLength, -headWidth/2))
+        points.append(CGPointMake(tailLength, -tailWidth/2))
+        points.append(CGPointMake(0, -tailWidth/2))
+        
+    }
+    
+    
+    class func transformForStartPoint(startPoint: CGPoint, endPoint: CGPoint, length: CGFloat) -> CGAffineTransform{
+        let cosine: CGFloat = (endPoint.x - startPoint.x)/length
+        let sine: CGFloat = (endPoint.y - startPoint.y)/length
+        
+        return CGAffineTransformMake(cosine, sine, -sine, cosine, startPoint.x, startPoint.y)
+    }
+    
+    
+    class func bezierPathWithArrowFromPoint(startPoint startPoint:CGPoint, endPoint: CGPoint, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat) -> UIBezierPath {
+        
+        let xdiff: Float = Float(endPoint.x) - Float(startPoint.x)
+        let ydiff: Float = Float(endPoint.y) - Float(startPoint.y)
+        let length = hypotf(xdiff, ydiff)
+        
+        var points = [CGPoint]()
+        self.getAxisAlignedArrowPoints(&points, forLength: CGFloat(length), tailWidth: tailWidth, headWidth: headWidth, headLength: headLength)
+        
+        var transform: CGAffineTransform = self.transformForStartPoint(startPoint, endPoint: endPoint, length:  CGFloat(length))
+        
+        let cgPath: CGMutablePathRef = CGPathCreateMutable()
+        CGPathAddLines(cgPath, &transform, points, 7)
+        CGPathCloseSubpath(cgPath)
+        
+        let uiPath: UIBezierPath = UIBezierPath(CGPath: cgPath)
+        return uiPath
     }
 }
