@@ -60,6 +60,7 @@ public class TouchDrawView: UIView {
         case Brush
         case Square
         case Arrow
+        case Text
     }
     
     
@@ -318,6 +319,58 @@ public class TouchDrawView: UIView {
         UIGraphicsEndImageContext()
     }
     
+    /// draws a text
+    private func drawText(stroke: Stroke) -> Void {
+        let properties = stroke.settings
+        let array = stroke.points
+        
+        if array.count >= 1 {
+            // Draw the one point
+            let pointStr = array[0]
+            let point = CGPointFromString(pointStr)
+            self.drawTextFrom(point, toPoint: point, properties: properties)
+        }
+        
+        self.mergeViews()
+    }
+    
+    /// draws a text from first touch
+    private func drawTextFrom(fromPoint: CGPoint, toPoint: CGPoint, properties: StrokeSettings) -> Void {
+        
+        
+        let textField = FlexibleTextFieldView(origin:fromPoint)
+        self.addSubview(textField)
+        /*
+         self.tempImageView.image = nil
+         
+         UIGraphicsBeginImageContext(self.frame.size)
+         let ctx = UIGraphicsGetCurrentContext()
+         
+         
+         let font = UIFont(name: "Helvetica", size: 50)!
+         let stringAtt = [
+         NSFontAttributeName: font,
+         NSStrokeColorAttributeName : UIColor.blackColor(),
+         NSForegroundColorAttributeName : UIColor.whiteColor(),
+         NSStrokeWidthAttributeName : -3.0
+         ]
+         
+         let strAttred = NSAttributedString(string: "SOME TEXT", attributes: stringAtt)
+         strAttred.drawAtPoint(fromPoint)
+         
+         
+         self.tempImageView.image?.drawInRect(self.tempImageView.frame)
+         let image = UIGraphicsGetImageFromCurrentImageContext()
+         self.tempImageView.image = image
+         self.tempImageView.alpha = properties.color.alpha
+         
+         UIGraphicsEndImageContext()*/
+    }
+    
+    
+    
+    
+    
     /// exports the current drawing
     public func exportDrawing() -> UIImage {
         UIGraphicsBeginImageContext(self.mainImageView.bounds.size)
@@ -430,7 +483,7 @@ public class TouchDrawView: UIView {
         if let touch = touches.first {
             self.lastPoint = touch.locationInView(self)
             self.pointsArray = []
-            self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))            
+            self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
         }
     }
     
@@ -457,6 +510,10 @@ public class TouchDrawView: UIView {
                 self.drawArrowFrom(self.lastPoint, toPoint: currentPoint, properties: self.brushProperties)
                 self.pointsArray.append(NSStringFromCGPoint(self.lastPoint))
                 
+            case .Text:
+                //don't do anything
+                break
+                
             }
         }
     }
@@ -473,9 +530,23 @@ public class TouchDrawView: UIView {
                 self.drawSquareFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
             case .Arrow:
                 self.drawArrowFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
+            case .Text:
+                self.drawTextFrom(self.lastPoint, toPoint: self.lastPoint, properties: self.brushProperties)
             }
         }
         
+        guard selectedTool != .Text else
+        {
+            //Don't save to stroke stack if its a text type.
+            //Stack should be added on return key
+            return
+        }
+        
+        strokeEnded()
+    }
+    
+    func strokeEnded()
+    {
         self.mergeViews()
         
         let stroke = Stroke()
