@@ -337,34 +337,9 @@ public class TouchDrawView: UIView {
     /// draws a text from first touch
     private func drawTextFrom(fromPoint: CGPoint, toPoint: CGPoint, properties: StrokeSettings) -> Void {
         
-        
         let textField = FlexibleTextFieldView(origin:fromPoint)
         self.addSubview(textField)
-        /*
-         self.tempImageView.image = nil
-         
-         UIGraphicsBeginImageContext(self.frame.size)
-         let ctx = UIGraphicsGetCurrentContext()
-         
-         
-         let font = UIFont(name: "Helvetica", size: 50)!
-         let stringAtt = [
-         NSFontAttributeName: font,
-         NSStrokeColorAttributeName : UIColor.blackColor(),
-         NSForegroundColorAttributeName : UIColor.whiteColor(),
-         NSStrokeWidthAttributeName : -3.0
-         ]
-         
-         let strAttred = NSAttributedString(string: "SOME TEXT", attributes: stringAtt)
-         strAttred.drawAtPoint(fromPoint)
-         
-         
-         self.tempImageView.image?.drawInRect(self.tempImageView.frame)
-         let image = UIGraphicsGetImageFromCurrentImageContext()
-         self.tempImageView.image = image
-         self.tempImageView.alpha = properties.color.alpha
-         
-         UIGraphicsEndImageContext()*/
+        
     }
     
     
