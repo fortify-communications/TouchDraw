@@ -13,7 +13,7 @@ public class Stroke: NSObject, NSCoding {
     internal var points: [String]!
     
     /// the properties of the stroke
-    internal var settings: StrokeSettings!
+    public var settings: StrokeSettings!
     
     /// default initialization
     override init() {

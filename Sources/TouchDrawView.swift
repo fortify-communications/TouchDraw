@@ -42,7 +42,7 @@ public class TouchDrawView: UIView {
     private var lastPoint = CGPoint.zero
     
     /// brushProperties: current brush settings
-    private var brushProperties = StrokeSettings()
+    public var brushProperties = StrokeSettings()
     
     private var touchesMoved = false
     
@@ -264,9 +264,8 @@ public class TouchDrawView: UIView {
         let size = CGSize(width: abs(fromPoint.x-toPoint.x), height:  abs(fromPoint.y-toPoint.y))
         
         let rect = CGRect(origin: origin, size: size)
-        
-        CGContextStrokeRectWithWidth(context!,rect,properties.width)
         CGContextSetRGBStrokeColor(context!, properties.color.red, properties.color.green, properties.color.blue, 1.0)
+        CGContextStrokeRectWithWidth(context!,rect,properties.width)
         CGContextSetBlendMode(context!, CGBlendMode.Normal)
         CGContextStrokePath(context!)
         
@@ -305,8 +304,10 @@ public class TouchDrawView: UIView {
         self.tempImageView.image = nil
         
         UIGraphicsBeginImageContext(self.frame.size)
-        let _ = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         let arrowPath = UIBezierPath.bezierPathWithArrowFromPoint(startPoint: fromPoint, endPoint: toPoint, tailWidth: properties.width, headWidth: properties.width+15, headLength: 20)
+        CGContextSetRGBStrokeColor(context!, properties.color.red, properties.color.green, properties.color.blue, 1.0)
+        CGContextSetRGBFillColor(context!, properties.color.red, properties.color.green, properties.color.blue, 1.0)
         
         arrowPath.fill()
         arrowPath.stroke()
@@ -339,6 +340,8 @@ public class TouchDrawView: UIView {
         
         let textField = FlexibleTextFieldView(origin:fromPoint)
         self.addSubview(textField)
+        textField.textView.textColor = UIColor(red: properties.color.red, green: properties.color.green, blue: properties.color.blue, alpha: 1.0)
+        
         
     }
     

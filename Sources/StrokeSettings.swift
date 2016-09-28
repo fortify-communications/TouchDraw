@@ -9,11 +9,11 @@
 public class StrokeSettings: NSObject, NSCoding {
 
     /// color of the brush
-    internal var color: CIColor!
-
+    public var color: CIColor!
+    
     /// width of the brush
-    internal var width: CGFloat!
-
+    public var width: CGFloat!
+    
     override init() {
         super.init()
         self.color = CIColor(color: UIColor.blackColor())
