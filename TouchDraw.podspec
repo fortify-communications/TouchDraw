@@ -11,7 +11,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = "TouchDraw"
-  s.version               = "1.3.1"
+  s.version               = "1.3.2"
   s.summary               = "TouchDraw is a UIView you can draw on."
 
   s.description           = <<-DESC
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   s.platform              = :ios
   s.ios.deployment_target = "8.0"
 
-  s.source                = { :git => "https://github.com/dehli/TouchDraw.git", :tag => "#{s.version}"}
+  s.source                = { :git => "https://github.com/fortify-communications/TouchDraw", :tag => "#{s.version}"}
   s.source_files          = "Sources/**/*.{swift}"
 
 end
