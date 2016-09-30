@@ -89,7 +89,7 @@ public class FlexibleTextFieldView: UIView {
         trailConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: 0)
         hConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20)
         wConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20)
-        yConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+        yConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
         constraints = [leadConstraint,trailConstraint,yConstraint,hConstraint,wConstraint]
         self.addConstraints(constraints)
         
