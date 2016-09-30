@@ -36,9 +36,8 @@ Pod::Spec.new do |s|
 
   s.platform              = :ios
   s.ios.deployment_target = "8.0"
-  s.resources_bundles = {
-	"TouchDraw" => ["TouchDraw/Sources/Assets.xcassets/**/*.{png,jpeg,jpg}"]
-  }
+  s.ios.resource_bundle = { 'TouchDraw' => 'TouchDraw/Sources/Assets.xcassets/**/*.{png,jpeg,jpg}'}
+
 
   s.source                = { :git => "https://github.com/fortify-communications/TouchDraw.git", :tag => "#{s.version}"}
   s.source_files          = "Sources/**/*.{swift}"
