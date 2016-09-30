@@ -16,7 +16,7 @@
 		89F60F6F1BC9580000BCDD93 /* TouchDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = 89F60F6E1BC9580000BCDD93 /* TouchDraw.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8A548640EF83A737F4C9200 /* Pods_TouchDraw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30EC26CA882649A41EBE51C /* Pods_TouchDraw.framework */; };
 		F2DA7F231D9C8E4500E444BF /* FlexibleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA7F221D9C8E4500E444BF /* FlexibleTextFieldView.swift */; };
-		F2DA7F251D9C8E5400E444BF /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DA7F241D9C8E5400E444BF /* Media.xcassets */; };
+		F2DA7F251D9C8E5400E444BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DA7F241D9C8E5400E444BF /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 		DD99177C02A49229DCC18F55 /* Pods-TouchDrawTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchDrawTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchDrawTests/Pods-TouchDrawTests.release.xcconfig"; sourceTree = "<group>"; };
 		F181ED7B136597EAA2CE17D2 /* Pods-TouchDrawTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchDrawTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TouchDrawTests/Pods-TouchDrawTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2DA7F221D9C8E4500E444BF /* FlexibleTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlexibleTextFieldView.swift; path = Sources/FlexibleTextFieldView.swift; sourceTree = "<group>"; };
-		F2DA7F241D9C8E5400E444BF /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Sources/Media.xcassets; sourceTree = "<group>"; };
+		F2DA7F241D9C8E5400E444BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = "<group>"; };
 		F30EC26CA882649A41EBE51C /* Pods_TouchDraw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchDraw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56AC7622DE7B96F56273E2F /* Pods-TouchDraw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouchDraw.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouchDraw/Pods-TouchDraw.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,7 +97,7 @@
 				F2DA7F221D9C8E4500E444BF /* FlexibleTextFieldView.swift */,
 				89DF760B1D7D177700D789A8 /* Stroke.swift */,
 				89DF760C1D7D177700D789A8 /* StrokeSettings.swift */,
-				F2DA7F241D9C8E5400E444BF /* Media.xcassets */,
+				F2DA7F241D9C8E5400E444BF /* Assets.xcassets */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2DA7F251D9C8E5400E444BF /* Media.xcassets in Resources */,
+				F2DA7F251D9C8E5400E444BF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

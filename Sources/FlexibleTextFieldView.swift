@@ -61,7 +61,8 @@ public class FlexibleTextFieldView: UIView {
         
         //add resize button
         resizeBtn.frame = CGRect(x: frame.maxX-20, y: frame.maxY, width: 20, height: 20)
-        resizeBtn.setImage(UIImage(named: "resize"), forState: .Normal)
+        let resizeImage = UIImage(named: "resize", inBundle: NSBundle(forClass: self.classForCoder), compatibleWithTraitCollection: nil)
+        resizeBtn.setImage(resizeImage, forState: .Normal)
         resizeBtn.tintColor = UIColor.whiteColor()
         resizeBtn.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(resizeBtn)
@@ -80,7 +81,8 @@ public class FlexibleTextFieldView: UIView {
         
         //add close button
         closeBtn.frame = CGRect(x: frame.maxX-20, y: frame.minY, width: 20, height: 20)
-        closeBtn.setImage(UIImage(named: "cancel"), forState: .Normal)
+        let xImage = UIImage(named: "cancel", inBundle: NSBundle(forClass: self.classForCoder), compatibleWithTraitCollection: nil)
+        closeBtn.setImage(xImage, forState: .Normal)
         closeBtn.tintColor = UIColor.whiteColor()
         closeBtn.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(closeBtn)
