@@ -12,6 +12,7 @@ public class FlexibleTextFieldView: UIView {
     
     public var textView = UITextView()
     public var resizeBtn = UIButton()
+    public var closeBtn = UIButton()
     
     convenience init(origin:CGPoint) {
         let defaultFrame = CGRect(origin: origin, size: CGSize(width: 140, height: 40))
@@ -66,7 +67,7 @@ public class FlexibleTextFieldView: UIView {
         self.addSubview(resizeBtn)
         
         leadConstraint = NSLayoutConstraint(item: resizeBtn, attribute: .Leading, relatedBy: .Equal, toItem: textView, attribute: .Trailing, multiplier: 1, constant: 0)
-        let trailConstraint = NSLayoutConstraint(item: resizeBtn, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: 0)
+        var trailConstraint = NSLayoutConstraint(item: resizeBtn, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: 0)
         hConstraint = NSLayoutConstraint(item: resizeBtn, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20)
         wConstraint = NSLayoutConstraint(item: resizeBtn, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20)
         yConstraint = NSLayoutConstraint(item: resizeBtn, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
@@ -76,6 +77,24 @@ public class FlexibleTextFieldView: UIView {
         
         let resizePanRecognizer = UIPanGestureRecognizer(target: self, action:#selector(FlexibleTextFieldView.resizeView(_:)))
         resizeBtn.addGestureRecognizer(resizePanRecognizer)
+        
+        //add close button
+        closeBtn.frame = CGRect(x: frame.maxX-20, y: frame.minY, width: 20, height: 20)
+        closeBtn.setImage(UIImage(named: "cancel"), forState: .Normal)
+        closeBtn.tintColor = UIColor.whiteColor()
+        closeBtn.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(closeBtn)
+        
+        leadConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Leading, relatedBy: .Equal, toItem: textView, attribute: .Trailing, multiplier: 1, constant: 0)
+        trailConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: 0)
+        hConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20)
+        wConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 20)
+        yConstraint = NSLayoutConstraint(item: closeBtn, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+        constraints = [leadConstraint,trailConstraint,yConstraint,hConstraint,wConstraint]
+        self.addConstraints(constraints)
+        
+        closeBtn.addTarget(self, action: #selector(FlexibleTextFieldView.removeSelfFromSuperview), forControlEvents: .TouchUpInside)
+        
         
         self.layoutSubviews()
     }
@@ -103,6 +122,10 @@ public class FlexibleTextFieldView: UIView {
             self.frame = newFrame
         }
         
+    }
+    
+    func removeSelfFromSuperview(sender:AnyObject){
+        self.removeFromSuperview()
     }
     
     
