@@ -10,7 +10,7 @@
 public class Stroke: NSObject, NSCoding {
     
     /// the points that make up the stroke
-    internal var points: [String]!
+    public var points: [String]!
     
     /// the properties of the stroke
     public var settings: StrokeSettings!
