@@ -36,7 +36,7 @@ public class TouchDrawView: UIView {
     public var delegate: TouchDrawViewDelegate?
     
     /// used to keep track of all the strokes
-    internal var stack: [Stroke]!
+    public var stack: [Stroke]!
     private var pointsArray: [String]!
     
     private var lastPoint = CGPoint.zero
