@@ -46,8 +46,8 @@ public class TouchDrawView: UIView {
     
     private var touchesMoved = false
     
-    private var mainImageView = UIImageView()
-    private var tempImageView = UIImageView()
+    public var mainImageView = UIImageView()
+    public var tempImageView = UIImageView()
     
     private var undoEnabled = false
     private var redoEnabled = false
