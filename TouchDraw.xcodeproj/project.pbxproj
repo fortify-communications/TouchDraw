@@ -14,7 +14,6 @@
 		89EADBB71CB87C23001130A8 /* TouchDrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EADBB61CB87C23001130A8 /* TouchDrawTests.swift */; };
 		89EADBB91CB87C23001130A8 /* TouchDraw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F60F6B1BC9580000BCDD93 /* TouchDraw.framework */; };
 		89F60F6F1BC9580000BCDD93 /* TouchDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = 89F60F6E1BC9580000BCDD93 /* TouchDraw.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8A548640EF83A737F4C9200 /* Pods_TouchDraw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30EC26CA882649A41EBE51C /* Pods_TouchDraw.framework */; };
 		F2DA7F231D9C8E4500E444BF /* FlexibleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DA7F221D9C8E4500E444BF /* FlexibleTextFieldView.swift */; };
 		F2DA7F251D9C8E5400E444BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DA7F241D9C8E5400E444BF /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -63,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A548640EF83A737F4C9200 /* Pods_TouchDraw.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +157,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89EADBBC1CB87C23001130A8 /* Build configuration list for PBXNativeTarget "TouchDrawTests" */;
 			buildPhases = (
-				FE8138DB05F26A8113275613 /* 📦 Check Pods Manifest.lock */,
 				89EADBB01CB87C23001130A8 /* Sources */,
 				89EADBB11CB87C23001130A8 /* Frameworks */,
 				89EADBB21CB87C23001130A8 /* Resources */,
-				8564831D668B5E9D79AE099E /* 📦 Embed Pods Frameworks */,
-				4428BC9C50D4EC0D9933D844 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,12 +175,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89F60F7F1BC9580000BCDD93 /* Build configuration list for PBXNativeTarget "TouchDraw" */;
 			buildPhases = (
-				37B08ED86FEDACA61EA64EBA /* 📦 Check Pods Manifest.lock */,
 				89F60F661BC9580000BCDD93 /* Sources */,
 				89F60F671BC9580000BCDD93 /* Frameworks */,
 				89F60F681BC9580000BCDD93 /* Headers */,
 				89F60F691BC9580000BCDD93 /* Resources */,
-				37CE6AAD5B59EBF490F78C23 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +201,7 @@
 				TargetAttributes = {
 					89EADBB31CB87C23001130A8 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7H3P298635;
 						LastSwiftMigration = 0810;
 					};
 					89F60F6A1BC9580000BCDD93 = {
@@ -252,84 +246,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		37B08ED86FEDACA61EA64EBA /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		37CE6AAD5B59EBF490F78C23 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchDraw/Pods-TouchDraw-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4428BC9C50D4EC0D9933D844 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchDrawTests/Pods-TouchDrawTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8564831D668B5E9D79AE099E /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchDrawTests/Pods-TouchDrawTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE8138DB05F26A8113275613 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		89EADBB01CB87C23001130A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -366,6 +282,7 @@
 			baseConfigurationReference = F181ED7B136597EAA2CE17D2 /* Pods-TouchDrawTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = 7H3P298635;
 				INFOPLIST_FILE = TouchDrawTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -380,6 +297,7 @@
 			baseConfigurationReference = DD99177C02A49229DCC18F55 /* Pods-TouchDrawTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				DEVELOPMENT_TEAM = 7H3P298635;
 				INFOPLIST_FILE = TouchDrawTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

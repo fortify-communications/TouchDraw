@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000FB75356AAC93FC2C8B42128A438C6 /* FlexibleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025FD0A7520DE0213A96CFF8311B5989 /* FlexibleTextFieldView.swift */; };
+		26F7BE31EE7D9430EB99AC7F814AF4F0 /* StrokeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FE5509984F14701650139B3262F9D8 /* StrokeSettings.swift */; };
+		2AE0ED96A5C71541C449EB8C94ECA8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837D91A94BDD2F9CB8C7B4E2462B11C0 /* Assets.xcassets */; };
 		32D05CEB31C746213177D5D17E913045 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		34297A9C98981D8E671D6597C455FCD3 /* StrokeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1369AFBC2FBEFA325A3E91F75E8D2 /* StrokeSettings.swift */; };
+		36D35C00C4A552146C717A965C4228D8 /* TouchDraw-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 587865474893FCEC2FC71DB0525B842E /* TouchDraw-dummy.m */; };
 		4BE696E8D5309A624040E62F4D09B0B3 /* Pods-TouchDrawDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F904ADA40E5F5391D0BD9BCAF4866D /* Pods-TouchDrawDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F0BFA249B5484795B657E2A6D5FD3C4 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8B3AD5A1BF38AEF57A4EAD49D3A220 /* Stroke.swift */; };
-		686391872040E0787E7D9B3056C33AB7 /* TouchDraw-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE0B3846CD8D9BE8AA4DE3AEBDFCBAD /* TouchDraw-dummy.m */; };
-		6CB4825162BFA5ACA76A67F73674097E /* TouchDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7394730399E5A3273454669273720242 /* TouchDrawView.swift */; };
 		896F23715C0856398C2B455671A2A2AA /* Pods-TouchDrawDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC988718E777FB697734C63A39A91A8 /* Pods-TouchDrawDemo-dummy.m */; };
 		8EBEA04F42A23AB74D969983C1D4B59E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		C14C98E21CDBBE18821419929E526BB1 /* TouchDraw-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41207D845564FBB3BBED1EB015C87B85 /* TouchDraw-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2F078AEAA2E1984B38A14771722EDEC /* TouchDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0690D886AF22D5BBC54D9E182027FF /* TouchDrawView.swift */; };
+		AE6A577154D11C404776AA8D0F921055 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3510A96359A24A6BCB302E9D643ACDDF /* Stroke.swift */; };
+		C14C98E21CDBBE18821419929E526BB1 /* TouchDraw-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC90823019952415975E567F2251007D /* TouchDraw-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,29 +31,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025FD0A7520DE0213A96CFF8311B5989 /* FlexibleTextFieldView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlexibleTextFieldView.swift; sourceTree = "<group>"; };
+		08FE5509984F14701650139B3262F9D8 /* StrokeSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StrokeSettings.swift; sourceTree = "<group>"; };
 		09E9DFDA934DF7A7FA943F3812833E0D /* Pods-TouchDrawDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TouchDrawDemo.release.xcconfig"; sourceTree = "<group>"; };
-		1680A46BC10FC4BBB9AA55A708051460 /* TouchDraw.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TouchDraw.xcconfig; sourceTree = "<group>"; };
+		0E0690D886AF22D5BBC54D9E182027FF /* TouchDrawView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TouchDrawView.swift; sourceTree = "<group>"; };
+		198C339C21098F51D743C278A699989D /* TouchDraw.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TouchDraw.modulemap; sourceTree = "<group>"; };
+		20F1E985B0BBB74768182CA37D76F498 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A5CB2191B4ED139378010C9C8A0FF49 /* Pods-TouchDrawDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TouchDrawDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		41207D845564FBB3BBED1EB015C87B85 /* TouchDraw-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TouchDraw-umbrella.h"; sourceTree = "<group>"; };
-		419D2FF8C89F54DD03904BE6712D1F45 /* TouchDraw-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TouchDraw-prefix.pch"; sourceTree = "<group>"; };
-		5E8B3AD5A1BF38AEF57A4EAD49D3A220 /* Stroke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
-		7394730399E5A3273454669273720242 /* TouchDrawView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TouchDrawView.swift; sourceTree = "<group>"; };
+		3510A96359A24A6BCB302E9D643ACDDF /* Stroke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
+		587865474893FCEC2FC71DB0525B842E /* TouchDraw-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TouchDraw-dummy.m"; sourceTree = "<group>"; };
 		75F904ADA40E5F5391D0BD9BCAF4866D /* Pods-TouchDrawDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TouchDrawDemo-umbrella.h"; sourceTree = "<group>"; };
+		837D91A94BDD2F9CB8C7B4E2462B11C0 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86C1D0F22E480D6EC9D9EB69C3F344BF /* Pods_TouchDrawDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TouchDrawDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BC1369AFBC2FBEFA325A3E91F75E8D2 /* StrokeSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StrokeSettings.swift; sourceTree = "<group>"; };
 		9049C6C4D412D05000D515734CCA53B5 /* TouchDraw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TouchDraw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95238DCEB25DB03C47680024DFDF8F10 /* Pods-TouchDrawDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TouchDrawDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9560BEDB473750455AA8578F22B5ED94 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40FD835EDECB45DEB07D8164A56FE82 /* Pods-TouchDrawDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TouchDrawDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		B39E7FDDF937BC7F073B03DF6983C230 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B762EBF995F1D388B19EE84ED214925C /* Pods-TouchDrawDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TouchDrawDemo-frameworks.sh"; sourceTree = "<group>"; };
+		C6F1259E6C172417DA400DCE949C5912 /* TouchDraw-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TouchDraw-prefix.pch"; sourceTree = "<group>"; };
 		CBC988718E777FB697734C63A39A91A8 /* Pods-TouchDrawDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TouchDrawDemo-dummy.m"; sourceTree = "<group>"; };
 		CC3D3FC1902FBE131DF7E088A6231F9F /* Pods-TouchDrawDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TouchDrawDemo-resources.sh"; sourceTree = "<group>"; };
+		CC90823019952415975E567F2251007D /* TouchDraw-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TouchDraw-umbrella.h"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EA428C349132345A57A1E6100C880A68 /* Pods-TouchDrawDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TouchDrawDemo.modulemap"; sourceTree = "<group>"; };
-		EBE0B3846CD8D9BE8AA4DE3AEBDFCBAD /* TouchDraw-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TouchDraw-dummy.m"; sourceTree = "<group>"; };
-		EDF16EB683FE3BF8CC8794466E959058 /* TouchDraw.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TouchDraw.modulemap; sourceTree = "<group>"; };
+		EC489DC53D8DC544254C2A198D5D36BA /* TouchDraw.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TouchDraw.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,30 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		106C764BD4610EBA1D0DA44C4BA5FEBE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9560BEDB473750455AA8578F22B5ED94 /* Info.plist */,
-				EDF16EB683FE3BF8CC8794466E959058 /* TouchDraw.modulemap */,
-				1680A46BC10FC4BBB9AA55A708051460 /* TouchDraw.xcconfig */,
-				EBE0B3846CD8D9BE8AA4DE3AEBDFCBAD /* TouchDraw-dummy.m */,
-				419D2FF8C89F54DD03904BE6712D1F45 /* TouchDraw-prefix.pch */,
-				41207D845564FBB3BBED1EB015C87B85 /* TouchDraw-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Demo/Pods/Target Support Files/TouchDraw";
-			sourceTree = "<group>";
-		};
-		2F5538463827F3D2AFADEA118E783C32 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				5E8B3AD5A1BF38AEF57A4EAD49D3A220 /* Stroke.swift */,
-				8BC1369AFBC2FBEFA325A3E91F75E8D2 /* StrokeSettings.swift */,
-				7394730399E5A3273454669273720242 /* TouchDrawView.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,10 +86,29 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7ABBD696AC2A0962ADD7BD5339CC9B7D /* Development Pods */ = {
+		50FB0F790EED49FEC2E10570EBAC2BBA /* TouchDraw */ = {
 			isa = PBXGroup;
 			children = (
-				ECBDB81848F8B2B47C6220A7236A4F60 /* TouchDraw */,
+				9CAC48156557B888C953F8A1B3BCFD20 /* Resources */,
+				BA88FF19020BC3A8EE107D0FA9D800F5 /* Sources */,
+				C2789F18DC0D2D026E28ED15747AD89F /* Support Files */,
+			);
+			name = TouchDraw;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		6915427EC452D0C20C5D4B69F16F9031 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				837D91A94BDD2F9CB8C7B4E2462B11C0 /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		747B094C825FF6DB5E3E5C27673B147B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50FB0F790EED49FEC2E10570EBAC2BBA /* TouchDraw */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -118,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				7ABBD696AC2A0962ADD7BD5339CC9B7D /* Development Pods */,
+				747B094C825FF6DB5E3E5C27673B147B /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				DDD76B1D8DA4F9149B42CF7ECFCCF7A9 /* Products */,
 				8725E2AC80B50C13A64469D2A341B690 /* Targets Support Files */,
@@ -133,12 +132,45 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		9CAC48156557B888C953F8A1B3BCFD20 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6915427EC452D0C20C5D4B69F16F9031 /* Sources */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BA88FF19020BC3A8EE107D0FA9D800F5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				025FD0A7520DE0213A96CFF8311B5989 /* FlexibleTextFieldView.swift */,
+				3510A96359A24A6BCB302E9D643ACDDF /* Stroke.swift */,
+				08FE5509984F14701650139B3262F9D8 /* StrokeSettings.swift */,
+				0E0690D886AF22D5BBC54D9E182027FF /* TouchDrawView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2789F18DC0D2D026E28ED15747AD89F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				20F1E985B0BBB74768182CA37D76F498 /* Info.plist */,
+				198C339C21098F51D743C278A699989D /* TouchDraw.modulemap */,
+				EC489DC53D8DC544254C2A198D5D36BA /* TouchDraw.xcconfig */,
+				587865474893FCEC2FC71DB0525B842E /* TouchDraw-dummy.m */,
+				C6F1259E6C172417DA400DCE949C5912 /* TouchDraw-prefix.pch */,
+				CC90823019952415975E567F2251007D /* TouchDraw-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Demo/Pods/Target Support Files/TouchDraw";
 			sourceTree = "<group>";
 		};
 		DDD76B1D8DA4F9149B42CF7ECFCCF7A9 /* Products */ = {
@@ -148,16 +180,6 @@
 				9049C6C4D412D05000D515734CCA53B5 /* TouchDraw.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		ECBDB81848F8B2B47C6220A7236A4F60 /* TouchDraw */ = {
-			isa = PBXGroup;
-			children = (
-				2F5538463827F3D2AFADEA118E783C32 /* Sources */,
-				106C764BD4610EBA1D0DA44C4BA5FEBE /* Support Files */,
-			);
-			name = TouchDraw;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		FDC96AEB3466A0082046603C9D72D865 /* Pods-TouchDrawDemo */ = {
@@ -222,8 +244,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12739BAC628B08B655B0B5FC5A8E4B92 /* Build configuration list for PBXNativeTarget "TouchDraw" */;
 			buildPhases = (
-				2087CB4E41463B5E8B3416457D5781DC /* Sources */,
+				51A9AF16D5F7412C4C40A2FE2CD6AAA8 /* Sources */,
 				208CD21F6A5E641AAECB70D3E01B77A2 /* Frameworks */,
+				4E35DC21578D375377006E710DFFEB4D /* Resources */,
 				6D4F8B5D039D8DD51E2BEB59B22BA986 /* Headers */,
 			);
 			buildRules = (
@@ -243,6 +266,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					AEE8CE5AE7381B32BF38A4AA5EF71538 = {
+						LastSwiftMigration = 0810;
+					};
+					EB0F6F355033C76924020CC8960C412E = {
+						LastSwiftMigration = 0810;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -262,23 +293,35 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		2087CB4E41463B5E8B3416457D5781DC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		4E35DC21578D375377006E710DFFEB4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F0BFA249B5484795B657E2A6D5FD3C4 /* Stroke.swift in Sources */,
-				34297A9C98981D8E671D6597C455FCD3 /* StrokeSettings.swift in Sources */,
-				686391872040E0787E7D9B3056C33AB7 /* TouchDraw-dummy.m in Sources */,
-				6CB4825162BFA5ACA76A67F73674097E /* TouchDrawView.swift in Sources */,
+				2AE0ED96A5C71541C449EB8C94ECA8AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		3BFF3045FE865C56DC4DC24FAEB9C8F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				896F23715C0856398C2B455671A2A2AA /* Pods-TouchDrawDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A9AF16D5F7412C4C40A2FE2CD6AAA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000FB75356AAC93FC2C8B42128A438C6 /* FlexibleTextFieldView.swift in Sources */,
+				AE6A577154D11C404776AA8D0F921055 /* Stroke.swift in Sources */,
+				26F7BE31EE7D9430EB99AC7F814AF4F0 /* StrokeSettings.swift in Sources */,
+				36D35C00C4A552146C717A965C4228D8 /* TouchDraw-dummy.m in Sources */,
+				A2F078AEAA2E1984B38A14771722EDEC /* TouchDrawView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +339,7 @@
 /* Begin XCBuildConfiguration section */
 		31CFBCBC9F50B4FDA942BB4799A79C72 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1680A46BC10FC4BBB9AA55A708051460 /* TouchDraw.xcconfig */;
+			baseConfigurationReference = EC489DC53D8DC544254C2A198D5D36BA /* TouchDraw.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -318,6 +361,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -364,7 +408,7 @@
 		};
 		905C62DDBE204876D4CD4161E2F85E5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1680A46BC10FC4BBB9AA55A708051460 /* TouchDraw.xcconfig */;
+			baseConfigurationReference = EC489DC53D8DC544254C2A198D5D36BA /* TouchDraw.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -385,6 +429,7 @@
 				PRODUCT_NAME = TouchDraw;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -418,6 +463,7 @@
 				PRODUCT_NAME = Pods_TouchDrawDemo;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -494,6 +540,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

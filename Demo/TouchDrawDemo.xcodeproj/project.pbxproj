@@ -113,12 +113,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE43D48C1A14A6F200311C06 /* Build configuration list for PBXNativeTarget "TouchDrawDemo" */;
 			buildPhases = (
+				BDC735DBE8ED237384138728 /* 📦 Check Pods Manifest.lock */,
 				387D09E087E530047B635643 /* [CP] Check Pods Manifest.lock */,
 				EE43D4691A14A6F200311C06 /* Sources */,
 				EE43D46A1A14A6F200311C06 /* Frameworks */,
 				EE43D46B1A14A6F200311C06 /* Resources */,
 				92727888AFAFBE90DB06A190 /* [CP] Embed Pods Frameworks */,
 				E02A90476D5F5748EAB40ACC /* [CP] Copy Pods Resources */,
+				EA10D8036E8796F82A62F4D0 /* 📦 Embed Pods Frameworks */,
+				FF3F1F8B9745AB3D3F9EAC2C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,6 +144,7 @@
 				TargetAttributes = {
 					EE43D46C1A14A6F200311C06 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -206,6 +210,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchDrawDemo/Pods-TouchDrawDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BDC735DBE8ED237384138728 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		E02A90476D5F5748EAB40ACC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +233,36 @@
 			inputPaths = (
 			);
 			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchDrawDemo/Pods-TouchDrawDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA10D8036E8796F82A62F4D0 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TouchDrawDemo/Pods-TouchDrawDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF3F1F8B9745AB3D3F9EAC2C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +391,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.dehli.touchdraw;
 				PRODUCT_NAME = TouchDrawDemo;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -354,6 +404,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.dehli.touchdraw;
 				PRODUCT_NAME = TouchDrawDemo;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
