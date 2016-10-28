@@ -7,13 +7,13 @@
 
 
 /// a drawing stroke
-public class Stroke: NSObject, NSCoding {
+open class Stroke: NSObject, NSCoding {
     
     /// the points that make up the stroke
-    public var points: [String]!
+    open var points: [String]!
     
     /// the properties of the stroke
-    public var settings: StrokeSettings!
+    open var settings: StrokeSettings!
     
     /// default initialization
     override init() {
@@ -35,13 +35,13 @@ public class Stroke: NSObject, NSCoding {
     required public convenience init?(coder aDecoder: NSCoder) {
         self.init()
         
-        self.points = aDecoder.decodeObjectForKey("points") as! [String]!
-        self.settings = aDecoder.decodeObjectForKey("settings") as! StrokeSettings!
+        self.points = aDecoder.decodeObject(forKey: "points") as! [String]!
+        self.settings = aDecoder.decodeObject(forKey: "settings") as! StrokeSettings!
     }
     
     /// Used to encode a Stroke with a coder
-    public func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.points, forKey: "points")
-        aCoder.encodeObject(self.settings, forKey: "settings")
+    open func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.points, forKey: "points")
+        aCoder.encode(self.settings, forKey: "settings")
     }
 }

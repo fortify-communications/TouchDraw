@@ -6,17 +6,17 @@
 //
 
 /// properties to describe the brush
-public class StrokeSettings: NSObject, NSCoding {
+open class StrokeSettings: NSObject, NSCoding {
 
     /// color of the brush
-    public var color: CIColor!
+    open var color: CIColor!
     
     /// width of the brush
-    public var width: CGFloat!
+    open var width: CGFloat!
     
     override init() {
         super.init()
-        self.color = CIColor(color: UIColor.blackColor())
+        self.color = CIColor(color: UIColor.black)
         self.width = CGFloat(10.0)
     }
 
@@ -40,13 +40,13 @@ public class StrokeSettings: NSObject, NSCoding {
     required public convenience init?(coder aDecoder: NSCoder) {
         self.init()
         
-        self.color = aDecoder.decodeObjectForKey("color") as! CIColor!
-        self.width = aDecoder.decodeObjectForKey("width") as! CGFloat!
+        self.color = aDecoder.decodeObject(forKey: "color") as! CIColor!
+        self.width = aDecoder.decodeObject(forKey: "width") as! CGFloat!
     }
 
     /// Used to encode a StrokeSettings with a coder
-    public func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.color, forKey: "color")
-        aCoder.encodeObject(self.width, forKey: "width")
+    open func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.color, forKey: "color")
+        aCoder.encode(self.width, forKey: "width")
     }
 }
