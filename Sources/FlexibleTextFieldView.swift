@@ -23,7 +23,7 @@ open class FlexibleTextFieldView: UIView, UITextViewDelegate {
         super.init(frame: frame)
         // Initialization code
         
-        
+        self.textView.delegate = self
         self.backgroundColor = UIColor.clear
         
         //add UITextView
