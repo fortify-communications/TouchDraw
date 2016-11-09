@@ -11,6 +11,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = "TouchDraw"
+<<<<<<< HEAD
   s.version               = "1.3.7"
   s.summary               = "TouchDraw is a UIView you can draw on."
 
