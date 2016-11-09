@@ -1,5 +1,5 @@
 PODS:
-  - TouchDraw (1.3.6)
+  - TouchDraw (1.3.7)
 
 DEPENDENCIES:
   - TouchDraw (from `../`)
