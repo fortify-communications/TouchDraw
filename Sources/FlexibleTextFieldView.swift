@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class FlexibleTextFieldView: UIView {
+open class FlexibleTextFieldView: UIView, UITextViewDelegate {
     
     open var textView = UITextView()
     open var resizeBtn = UIButton()
@@ -130,5 +130,12 @@ open class FlexibleTextFieldView: UIView {
         self.removeFromSuperview()
     }
     
+    // Mark: - UITextViewDelegate
     
+    public func textViewDidChange(_ textView: UITextView) {
+        let newSize = textView.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+        var newFrame = self.frame
+        newFrame.size = CGSize(width: max(newSize.width + 20, 140), height: max(newSize.height, 40))
+        self.frame = newFrame
+    }
 }
