@@ -15,7 +15,7 @@ open class FlexibleTextFieldView: UIView
     open var closeBtn = UIButton()
     
     convenience init(origin:CGPoint) {
-        let defaultFrame = CGRect(origin: origin, size: CGSize(width: 140, height: 40))
+        let defaultFrame = CGRect(origin: origin, size: CGSize(width: 280, height: 160))
         self.init(frame: defaultFrame)
     }
     
