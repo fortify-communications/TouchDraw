@@ -30,7 +30,7 @@ open class FlexibleTextFieldView: UIView
         textView.backgroundColor = UIColor.clear
         textView.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width-20, height: frame.height)
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.contentInset = UIEdgeInsetsMake(-4,0,0,0)
+        textView.contentInset = UIEdgeInsets(top: -4,left: 0,bottom: 0,right: 0)
         textView.isScrollEnabled = false
         textView.layer.borderWidth = 2
         textView.layer.borderColor = UIColor.white.cgColor
@@ -38,11 +38,11 @@ open class FlexibleTextFieldView: UIView
         
         if let font = UIFont(name: "Helvetica", size: 25)
         {
-            let stringAtt: [NSAttributedStringKey: Any] = [
-                NSAttributedStringKey.font:             font,
-                NSAttributedStringKey.strokeColor:      UIColor.black,
-                NSAttributedStringKey.foregroundColor:  UIColor.white,
-                NSAttributedStringKey.strokeWidth:      -2.0
+            let stringAtt: [NSAttributedString.Key: Any] = [
+                NSAttributedString.Key.font:             font,
+                NSAttributedString.Key.strokeColor:      UIColor.black,
+                NSAttributedString.Key.foregroundColor:  UIColor.white,
+                NSAttributedString.Key.strokeWidth:      -2.0
             ]
             textView.attributedText = NSAttributedString(string: "Your Text", attributes: stringAtt)
         }
